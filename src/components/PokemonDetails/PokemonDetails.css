@@ -1,0 +1,41 @@
+.pokemon-details{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.loading{
+    margin:500px;
+}
+
+.pokemon-details-wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.img{
+    height:300px;
+}
+
+.name{
+    letter-spacing: 5px;
+    font-size: 2.25rem;
+}
+
+.height, .weight{
+    font-size:1.25rem;
+    padding: 5px 10px;
+}
+
+.types{
+    margin-top:10px;
+}
+
+span{
+    background-color: rgb(233, 233, 233);
+    padding:5px 10px;
+    margin-left:10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
