@@ -18,7 +18,6 @@ function PokemonDetails(){
             height:result.data.height,
             types: result.data.types.map((t)=>t.type.name)
         }
-        console.log(details);
         setPokemon(details);
     }
 
