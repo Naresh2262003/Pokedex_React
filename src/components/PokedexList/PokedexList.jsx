@@ -1,14 +1,15 @@
-import usePokemonList from '../../hooks/usePokemonList.jsx';
+import usePokemonList from '../../hooks/usePokemonList.js';
 import PokemonCard from '../PokemonCard/PokemonCard.jsx';
 import './PokedexList.css'
 
 function PokedexList(){
-    const [PokemonListState, setPokemonListState] = usePokemonList();
+    const [PokemonListState, setPokemonListState] = usePokemonList(false);
 
     return (
         <div className="pokemon-list-wrapper">
             <div className='pokemon-wrapper'>
-                {PokemonListState.isLoading ? "Loading...":PokemonListState.Pokemon.map((p)=> <PokemonCard name={p.name} image={p.image} id={p.id} key={p.id}/>)}
+                {PokemonListState.isLoading ? "Loading...":
+                PokemonListState.Pokemon.map((p)=> <PokemonCard name={p.name} image={p.image} id={p.id} key={p.id}/>)}
             </div>
 
             <div className="controls">
