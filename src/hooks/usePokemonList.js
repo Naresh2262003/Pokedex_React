@@ -9,7 +9,7 @@ function usePokemonList(){
         nextURL:"",
         prevURL:""
     });
-
+    
     async function downloadPokemons(){
         setPokemonListState((p)=>{
             return {...p,isLoading:true}
@@ -17,9 +17,6 @@ function usePokemonList(){
 
         const response= await axios.get(PokemonListState.URL);
         const pokemonResult= response.data.results;
-
-        console.log("response data pokemon",response.data.pokemon);
-        console.log(PokemonListState);
 
         setPokemonListState((state)=>({
             ...state,
@@ -30,8 +27,6 @@ function usePokemonList(){
         // now getting the details of all 20 pokemons details like name, image , id and type
         const pokemonResultPromise= pokemonResult.map((pokemon)=> axios.get(pokemon.url));
         const pokemonData= await axios.all(pokemonResultPromise);
-
-        console.log(pokemonData);
         
         const res= pokemonData.map((pokemon)=>{
             return {

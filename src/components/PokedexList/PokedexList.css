@@ -20,9 +20,5 @@
 }
 
 .controls button:hover{
-    padding:0.5rem 1rem;
-    margin:1rem;
-    border-radius:0.75rem;
     background-color:rgba(132, 232, 232, 0.749);
-    transition:1s;
 }
