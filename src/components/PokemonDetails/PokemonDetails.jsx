@@ -4,12 +4,14 @@ import './PokemonDetails.css'
 
 function PokemonDetails({PokemonName}){
     const {id}= useParams();
-    const [Pokemon, PokemonListState]= usePokemonDetails(id,PokemonName);
+    const [Pokemon]= usePokemonDetails(id,PokemonName);
+
+    console.dir(Pokemon)
 
     return (
         <div className='pokemon-details'>
             { 
-            PokemonListState.Pokemon && Object.keys(PokemonListState.Pokemon).length === 0 ? <div className='loading'>"Loading..."</div>:
+            Object.keys(Pokemon).length === 0 ? <div className='loading'>"Loading..."</div>:
                 (
                 <div>
                     <div className='pokemon-details-wrapper'>
